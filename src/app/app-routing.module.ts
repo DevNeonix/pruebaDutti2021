@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'principal',
-    loadChildren: () => import(`./components/principal/principal.module`).then(m => m.PrincipalModule),
+    loadChildren: () => import(`./pages/pages.module`).then(m => m.PagesModule),
     canActivate: [AuthGuard]
   }
   // { path: 'ships', loadChildren: () => import(`./components/ships/ships.module`).then(m => m.ShipsModule) }
