@@ -31,4 +31,20 @@ export class AuthService {
 
 
   }
+
+  register(reg: User) {
+    return new Observable((observer) => {
+      const users = JSON.parse(localStorage.getItem('users'));
+      // @ts-ignore
+      for (const user: User of users) {
+        if (user.email === reg.email) {
+          observer.error('Este usuario ya existe');
+        }
+      }
+      users.push(reg);
+      localStorage.setItem('users', JSON.stringify(users));
+      observer.next(reg);
+
+    });
+  }
 }
