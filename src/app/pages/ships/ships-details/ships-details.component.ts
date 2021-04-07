@@ -45,7 +45,7 @@ export class ShipsDetailsComponent implements OnInit {
     $('#exampleModal').modal('show');
     this.titleDetails = details.name;
     this.modelDetails = details.model;
-    this.starship_class = details.starship_class
+    this.starship_class = details.starship_class;
   }
 
 }

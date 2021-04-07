@@ -11,7 +11,7 @@ import {ShipsDetailsComponent} from './ships/ships-details/ships-details.compone
 import {NgxPaginationModule} from 'ngx-pagination';
 import {ShipsService} from '../services/ships.service';
 import {StoreModule} from "@ngrx/store";
-import {shipsReducer} from "./ships/ships.reducer";
+import {shipsReducer} from "../shared/redux/ships.reducer";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {environment} from "../../environments/environment";
 import {FilmsService} from "../services/films.service";
@@ -45,6 +45,11 @@ const routes: Routes = [
     RouterModule.forChild(routes),
 
     StoreModule.forRoot({ships: shipsReducer}),
+
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
   ],
   providers: [ShipsService, FilmsService, CharacterService]
 })

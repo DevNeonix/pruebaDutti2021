@@ -1,11 +1,4 @@
-export interface ResponseShips{
-  count: number;
-  next: string;
-  previous?: any;
-  results: ResultShips[];
-}
-
-interface ResultShips {
+export interface Ship {
   name: string;
   model: string;
   manufacturer: string;
