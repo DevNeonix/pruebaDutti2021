@@ -1,0 +1,44 @@
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <div class="col-lg-8 col-xl-9 d-none d-lg-flex h-100 bg-primary">
+      <div class="bg-login-left"></div>
+    </div>
+    <div class="col-lg-4 col-xl-3  h-100 d-flex align-items-center px-4">
+      <div class="login__container w-100">
+        <form action="">
+          <h4>Bienvenido!</h4>
+          <span class="text-muted">Ingresa tus creedenciales para continuar</span>
+
+          <div class="my-3 w-100">
+            <label>Email</label>
+            <input type="text" class="form-control">
+          </div>
+
+
+          <div class="mb-3 w-100 ">
+            <label>Password</label>
+            <div class="input-group">
+              <input [type]="showPass?'text':'password'" class="form-control">
+              <button class="btn btn-light" type="button" (click)="showPass = !showPass">
+                <i class="bx" [class]="showPass?'bx-lock-open':'bx-lock'"></i>
+              </button>
+            </div>
+
+          </div>
+
+
+          <div class="mb-3">
+            <button class="btn btn-primary btn-block" type="submit">Ingresar</button>
+          </div>
+
+
+        </form>
+        <div class="mb-3 text-right">
+          <a class="text-primary">¿No Tienes Cuenta?</a>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
