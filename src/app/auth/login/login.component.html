@@ -10,16 +10,13 @@
           <span class="text-muted">Ingresa tus creedenciales para continuar</span>
 
           <div class="my-3 w-100">
-            <label>Email</label>
+            <label>Email o Nombre de usuario</label>
             <input type="text" class="form-control" placeholder="email@example.com" [class.is-invalid]="submitted && f.email.invalid"
                    formControlName="email">
 
             <div class="invalid-feedback" *ngIf="f.email.invalid">
               <div *ngIf="f.email.errors.required">
                 Este campo es obligatorio.
-              </div>
-              <div *ngIf="f.email.errors.email">
-                Este campo no tiene el formato correcto.
               </div>
             </div>
 

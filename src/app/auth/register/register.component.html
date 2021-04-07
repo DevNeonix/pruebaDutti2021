@@ -1,1 +1,94 @@
-<p>register works!</p>
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <div class="col-lg-8 col-xl-9 d-none d-lg-flex h-100 bg-primary">
+      <div class="bg-login-left"></div>
+    </div>
+    <div class="col-lg-4 col-xl-3  h-100 d-flex align-items-center px-4">
+      <div class="login__container w-100">
+        <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+          <h4>Bienvenido!</h4>
+          <span class="text-muted">Ingresa tus creedenciales para continuar</span>
+
+          <div class="my-3 w-100">
+            <label>Nombres</label>
+            <input type="text" class="form-control"
+                   [class.is-invalid]="submitted && f.first_name.invalid"
+                   formControlName="first_name">
+            <div class="invalid-feedback" *ngIf="f.first_name.invalid">
+              <div *ngIf="f.first_name.errors.required">
+                Este campo es obligatorio.
+              </div>
+            </div>
+          </div>
+
+          <div class="my-3 w-100">
+            <label>Apellidos</label>
+            <input type="text" class="form-control"
+                   [class.is-invalid]="submitted && f.last_name.invalid"
+                   formControlName="last_name">
+            <div class="invalid-feedback" *ngIf="f.last_name.invalid">
+              <div *ngIf="f.last_name.errors.required">
+                Este campo es obligatorio.
+              </div>
+            </div>
+          </div>
+
+          <div class="my-3 w-100">
+            <label>Nombre de Usuario</label>
+            <input type="text" class="form-control"
+                   [class.is-invalid]="submitted && f.username.invalid"
+                   formControlName="username">
+            <div class="invalid-feedback" *ngIf="f.username.invalid">
+              <div *ngIf="f.username.errors.required">
+                Este campo es obligatorio.
+              </div>
+            </div>
+          </div>
+
+
+          <div class="my-3 w-100">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="email@example.com"
+                   [class.is-invalid]="submitted && f.email.invalid"
+                   formControlName="email">
+            <div class="invalid-feedback" *ngIf="f.email.invalid">
+              <div *ngIf="f.email.errors.required">
+                Este campo es obligatorio.
+              </div>
+              <div *ngIf="f.email.errors.email">
+                Este campo no tiene el formato correcto.
+              </div>
+            </div>
+          </div>
+
+
+          <div class="my-3 w-100">
+            <label>Password</label>
+            <input type="password" class="form-control"
+                   [class.is-invalid]="submitted && f.password.invalid"
+                   formControlName="password">
+            <div class="invalid-feedback" *ngIf="f.password.invalid">
+              <div *ngIf="f.password.errors.required">
+                Este campo es obligatorio.
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="mb-3">
+            <button class="btn btn-primary btn-block" type="submit">Ingresar</button>
+          </div>
+
+
+        </form>
+        <div class="mb-3 text-right">
+          <a class="text-primary" routerLink="/auth/login">Tengo cuenta</a>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
