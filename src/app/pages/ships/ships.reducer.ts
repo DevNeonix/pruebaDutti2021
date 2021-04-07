@@ -7,7 +7,6 @@ export const initialState: ResponseShips = null;
 const _shipsReducer = createReducer(
   initialState,
   on(setData, (state, action) => {
-    console.log(action.payload);
     return state;
   }),
   on(clearData, () => {

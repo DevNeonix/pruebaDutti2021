@@ -1,1 +1,24 @@
-<p>page-one works!</p>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-lg-4 my-2" *ngFor="let film of films">
+      <div class="card">
+        <img class="card-img-top" [src]="getImage(film)" alt="Card image cap">
+        <div class="card-body">
+          <h3>{{film.title}}</h3>
+          <p>Director: {{film.director}}</p>
+          <p>Personajes ({{film.characters.length}})
+            <button class="btn btn-light" (click)="toggleCharacter(film.episode_id)"><i class="fa fa-eye"></i></button>
+          </p>
+          <div id="listCharacter{{film.episode_id}}" style="display: none">
+            <div class="d-flex flex-wrap">
+              <div *ngFor="let urlcharacter of film.characters" class="m-2">
+                <app-character-detail [urlcharacter]="urlcharacter"></app-character-detail>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

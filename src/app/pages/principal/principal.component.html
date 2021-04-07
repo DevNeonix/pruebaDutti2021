@@ -1,12 +1,13 @@
 <nav class="navbar navbar-light bg-primary">
-    <div class="dropdown">
-        <i class="fas fa-bars text-light" id="dropdownMenuButton" data-toggle="dropdown"></i>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" routerLink="/principal/ships">Ships</a>
-            <a class="dropdown-item" routerLink="/principal/pageOne">Page One</a>
-            <a class="dropdown-item" routerLink="/principal/pageTwo">Page Two</a>
-            <a class="dropdown-item" routerLink="/auth/login">Login</a>
-        </div>
+  <div class="dropdown">
+    <i class="fas fa-bars text-light" id="dropdownMenuButton" data-toggle="dropdown"></i>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" routerLink="/principal/ships">Ships</a>
+      <a class="dropdown-item" routerLink="/principal/films">Films</a>
+      <a class="dropdown-item" routerLink="/principal/pageTwo">Page Two</a>
+      <a class="dropdown-divider"></a>
+      <a class="dropdown-item" (click)="logout()">Logout</a>
     </div>
+  </div>
 </nav>
 <router-outlet></router-outlet>
