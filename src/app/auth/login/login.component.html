@@ -5,25 +5,41 @@
     </div>
     <div class="col-lg-4 col-xl-3  h-100 d-flex align-items-center px-4">
       <div class="login__container w-100">
-        <form action="">
+        <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
           <h4>Bienvenido!</h4>
           <span class="text-muted">Ingresa tus creedenciales para continuar</span>
 
           <div class="my-3 w-100">
             <label>Email</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" placeholder="email@example.com" [class.is-invalid]="submitted && f.email.invalid"
+                   formControlName="email">
+
+            <div class="invalid-feedback" *ngIf="f.email.invalid">
+              <div *ngIf="f.email.errors.required">
+                Este campo es obligatorio.
+              </div>
+              <div *ngIf="f.email.errors.email">
+                Este campo no tiene el formato correcto.
+              </div>
+            </div>
+
           </div>
 
 
           <div class="mb-3 w-100 ">
             <label>Password</label>
             <div class="input-group">
-              <input [type]="showPass?'text':'password'" class="form-control">
+              <input [type]="showPass?'text':'password'" class="form-control" formControlName="password"
+                     [class.is-invalid]="submitted && f.password.invalid">
               <button class="btn btn-light" type="button" (click)="showPass = !showPass">
                 <i class="bx" [class]="showPass?'bx-lock-open':'bx-lock'"></i>
               </button>
             </div>
-
+            <div class="invalid-feedback d-block" *ngIf="f.password.invalid &&submitted">
+              <div *ngIf="f.password.errors.required">
+                Este campo es obligatorio.
+              </div>
+            </div>
           </div>
 
 
