@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-primary">
+<nav class="navbar navbar-light bg-primary fixed-top justify-content-between">
   <div class="dropdown">
     <i class="fas fa-bars text-light" id="dropdownMenuButton" data-toggle="dropdown"></i>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -9,5 +9,7 @@
       <a class="dropdown-item" (click)="logout()">Logout</a>
     </div>
   </div>
+  <span class="h4 text-white">{{user.first_name}}</span>
 </nav>
+<div class="my-5 py-1"></div>
 <router-outlet></router-outlet>
