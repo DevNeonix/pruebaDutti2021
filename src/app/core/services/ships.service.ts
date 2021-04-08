@@ -13,14 +13,18 @@ export class ShipsService {
     // 'Access-Control-Allow-Origin': '*',
     'Content-Type': 'application/json'
   };
-  requestOptions = {
-    headers: new HttpHeaders(this.headerDict),
-  };
+
 
   constructor(private http: HttpClient) {
   }
 
-  getShips(): Observable<any> {
-    return this.http.get(this.url, this.requestOptions);
+  getShips(page): Observable<any> {
+    const requestOptions = {
+      headers: new HttpHeaders(this.headerDict),
+      params: {
+        page: page
+      }
+    };
+    return this.http.get(this.url, requestOptions);
   }
 }

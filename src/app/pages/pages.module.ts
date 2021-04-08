@@ -10,14 +10,13 @@ import {ShipsComponent} from './ships/ships.component';
 import {ShipsDetailsComponent} from './ships/ships-details/ships-details.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {ShipsService} from '../core/services/ships.service';
-import {StoreModule} from "@ngrx/store";
-import {shipsReducer} from "../shared/redux/ships.reducer";
-import {StoreDevtoolsModule} from "@ngrx/store-devtools";
-import {environment} from "../../environments/environment";
-import {FilmsService} from "../core/services/films.service";
-import {AppModule} from "../app.module";
-import {CharacterDetailComponent} from "../components/character-detail/character-detail.component";
-import {CharacterService} from "../core/services/character.service";
+import {StoreModule} from '@ngrx/store';
+import {shipsReducer} from '../shared/redux/ships.reducer';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {environment} from '../../environments/environment';
+import {FilmsService} from '../core/services/films.service';
+import {CharacterDetailComponent} from '../components/character-detail/character-detail.component';
+import {CharacterService} from '../core/services/character.service';
 
 const routes: Routes = [
   {
@@ -27,7 +26,7 @@ const routes: Routes = [
     children: [
       {path: 'ships', component: ShipsComponent},
       {path: 'films', component: PageOneComponent},
-      {path: 'pageTwo', component: PageTwoComponent},
+      {path: 'species', component: PageTwoComponent},
     ]
   }];
 

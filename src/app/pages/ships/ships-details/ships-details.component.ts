@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, SimpleChanges, Output, EventEmitter} from '@angular/core';
 
 declare var $: any;
 
@@ -8,9 +8,11 @@ declare var $: any;
   templateUrl: './ships-details.component.html',
   styleUrls: ['./ships-details.component.scss']
 })
-export class ShipsDetailsComponent implements OnInit {
+export class ShipsDetailsComponent implements OnInit, OnChanges {
 
-  @Input() dataList: any;
+  @Input() dataList = {};
+  @Output() changePage = new EventEmitter();
+  page = 1;
   config: any;
   shipId = '';
   url = '';
@@ -26,7 +28,7 @@ export class ShipsDetailsComponent implements OnInit {
     this.config = {
       itemsPerPage: 5,
       currentPage: 1,
-      totalItems: this.dataList.length
+      totalItems: this.dataList.count
     };
   }
 
@@ -39,6 +41,8 @@ export class ShipsDetailsComponent implements OnInit {
 
   pageChanged(event) {
     this.config.currentPage = event;
+    this.changePage.emit(event);
+    this.page = event;
   }
 
   openDetails(details) {
@@ -46,6 +50,19 @@ export class ShipsDetailsComponent implements OnInit {
     this.titleDetails = details.name;
     this.modelDetails = details.model;
     this.starship_class = details.starship_class;
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.dataList) {
+      if (this.dataList.count !== undefined) {
+        this.config = {
+          itemsPerPage: 10,
+          currentPage: this.page,
+          totalItems: this.dataList.count
+        };
+        console.log(this.config)
+      }
+    }
   }
 
 }

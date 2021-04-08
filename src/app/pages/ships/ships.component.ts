@@ -11,7 +11,7 @@ import {GetData, GetDataError} from '../../shared/redux/ships.actions';
 })
 export class ShipsComponent implements OnInit {
 
-  public dataList: any = [];
+  public dataList: any = {};
 
   constructor(
     private shipsService: ShipsService,
@@ -25,7 +25,11 @@ export class ShipsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.shipsService.getShips().subscribe((ships) => {
+    this.getShips(1);
+  }
+
+  getShips(page = 1) {
+    this.shipsService.getShips(page).subscribe((ships) => {
       this.dataList = ships;
       const action = new GetData(ships);
       this.store.dispatch(action);
@@ -33,5 +37,9 @@ export class ShipsComponent implements OnInit {
       const action = new GetDataError();
       this.store.dispatch(action);
     });
+  }
+
+  changePage($event: any) {
+    this.getShips($event)
   }
 }
