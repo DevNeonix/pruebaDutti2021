@@ -43,9 +43,10 @@ Navigate to `http://localhost:4200/`.
     1.  Se ha Re-diseñado la pantalla de login.
     2.  Mostrar errores de validación apenas inicie la página no es la mejor idea, entonces solo aparecerán luego de hacer click en el boton(submit).
     3.  Para acercarlo a un sistema de produccion la funcion login del servicio "auth.service" es un observable que retornará el usuario logueado si no mostrará una alerta.
-4.  Ships,Pages One (Films),Page Two:
+4.  Ships,Pages One (Films),Page Two(Species):
     1.  Se agrego ngrx(store) para el almacenamiento de Ships.
     2.  Como esta página esta vacia la llene con las peliculas obtenidas del api, con sus respectivos actores.
+    2.  Como esta página esta vacia la llene con las especies obtenidas del api.
 5.  Para evitar la sobrecarga del backend y frontend tenemos las siguientes opciones:
     1.  Usamos Lazy Load.
     2.  Validar formularios en el front para evitar sobrecarga del backend. 

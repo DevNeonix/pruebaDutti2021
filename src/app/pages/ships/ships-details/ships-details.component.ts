@@ -4,6 +4,7 @@ declare var $: any;
 
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'ships-details',
   templateUrl: './ships-details.component.html',
   styleUrls: ['./ships-details.component.scss']

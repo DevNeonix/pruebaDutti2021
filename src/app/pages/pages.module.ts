@@ -17,6 +17,7 @@ import {environment} from '../../environments/environment';
 import {FilmsService} from '../core/services/films.service';
 import {CharacterDetailComponent} from '../components/character-detail/character-detail.component';
 import {CharacterService} from '../core/services/character.service';
+import {SpeciesService} from "../core/services/species.service";
 
 const routes: Routes = [
   {
@@ -50,7 +51,7 @@ const routes: Routes = [
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
   ],
-  providers: [ShipsService, FilmsService, CharacterService]
+  providers: [ShipsService, FilmsService, CharacterService,SpeciesService]
 })
 export class PagesModule {
 }
