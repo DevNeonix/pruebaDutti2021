@@ -29,7 +29,8 @@
 # Getting Started 
 
 `npm i`  for install
-Run `npm run start` for a dev server. 
+Run `npm run start` for a dev server.
+Run `npm run test` or `yarn test` for run tests.
 Navigate to `http://localhost:4200/`.
 
 
@@ -51,4 +52,4 @@ Navigate to `http://localhost:4200/`.
     1.  Usamos Lazy Load.
     2.  Validar formularios en el front para evitar sobrecarga del backend. 
     3.  Limitar consultas recurrentes por hora.
-    
+6.  Para los test de login y registro usamos jest
