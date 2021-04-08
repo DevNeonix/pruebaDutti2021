@@ -16,7 +16,6 @@ export class AppComponent {
     // llenar datos de prueba
     if (!users) {
       // tslint:disable-next-line:no-console
-      console.info('ingresando usuarios de prueba al localstorage');
       localStorage.setItem('users', JSON.stringify(userList));
     }
     if (user) {

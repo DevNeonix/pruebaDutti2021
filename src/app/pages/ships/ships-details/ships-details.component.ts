@@ -11,7 +11,7 @@ declare var $: any;
 })
 export class ShipsDetailsComponent implements OnInit, OnChanges {
 
-  @Input() dataList = {};
+  @Input() dataList: any = {};
   @Output() changePage = new EventEmitter();
   page = 1;
   config: any;
@@ -20,6 +20,7 @@ export class ShipsDetailsComponent implements OnInit, OnChanges {
   // Modal
   titleDetails = '';
   modelDetails = '';
+  // tslint:disable-next-line:variable-name
   starship_class = '';
 
   constructor() {
@@ -61,7 +62,6 @@ export class ShipsDetailsComponent implements OnInit, OnChanges {
           currentPage: this.page,
           totalItems: this.dataList.count
         };
-        console.log(this.config)
       }
     }
   }

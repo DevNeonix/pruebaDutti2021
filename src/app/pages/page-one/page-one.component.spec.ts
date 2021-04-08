@@ -1,6 +1,7 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 
-import { PageOneComponent } from './page-one.component';
+import {PageOneComponent} from './page-one.component';
+import {CharacterDetailComponent} from "../../components/character-detail/character-detail.component";
 
 describe('PageOneComponent', () => {
   let component: PageOneComponent;
@@ -8,9 +9,13 @@ describe('PageOneComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageOneComponent ]
-    })
-    .compileComponents();
+      declarations: [PageOneComponent],
+      imports: [],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(PageOneComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   }));
 
   beforeEach(() => {

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {AuthService} from "../../core/services/auth/auth.service";
-import {Router} from "@angular/router";
+import { FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../../core/services/auth/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,10 +17,7 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private router: Router
   ) {
-    this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.minLength(8)]),
-      password: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    });
+
   }
 
   // para obtener los datos
@@ -29,6 +26,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginForm = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.minLength(8)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    });
   }
 
   loginSubmit() {
