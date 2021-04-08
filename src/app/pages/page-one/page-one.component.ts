@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Film} from "../../interfaces/film";
-import {FilmsService} from "../../services/films.service";
+import {Film} from '../../core/interfaces/film';
+import {FilmsService} from '../../core/services/films.service';
 
 declare var $: any;
 

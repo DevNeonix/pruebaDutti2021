@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ShipsService} from 'src/app/services/ships.service';
+import {ShipsService} from 'src/app/core/services/ships.service';
 import {Store} from '@ngrx/store';
 import {shipsState} from '../../shared/redux/ships.reducer';
 import {GetData, GetDataError} from '../../shared/redux/ships.actions';

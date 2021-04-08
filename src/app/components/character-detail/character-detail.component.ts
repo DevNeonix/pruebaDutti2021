@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CharacterService} from "../../services/character.service";
-import {Character} from "../../interfaces/character";
+import {Character} from '../../core/interfaces/character';
+import {CharacterService} from '../../core/services/character.service';
 
 @Component({
   selector: 'app-character-detail',

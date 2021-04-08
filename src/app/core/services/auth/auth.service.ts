@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
 import {User} from '../../interfaces/user';
-import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +24,7 @@ export class AuthService {
       if (auth) {
         observer.next(auth);
       } else {
-        observer.error("Usuario o contraseña errada");
+        observer.error('Usuario o contraseña errada');
       }
 
     });

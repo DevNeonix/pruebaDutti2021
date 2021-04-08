@@ -1,6 +1,7 @@
-import {Ship} from '../../interfaces/Ship';
 
 // tslint:disable-next-line:class-name
+import {Ship} from "../../core/interfaces/Ship";
+
 export class shipsState {
   ships: Ship[];
 }

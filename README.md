@@ -35,4 +35,19 @@ Navigate to `http://localhost:4200/`.
 
 # Notas del desarrollador:
 
-
+1.  Se ha creado 2 módulos :
+    1.  Auth: Que va a trabajar principalmente el login y registro.
+    2.  Pages: Que trabajará las paginas que necesiten una autenticación como Principal, Naves, Page One, Page Two.
+2.  Se ha creando un Guard (AuthGuard) para evitar el ingreso por url sin estar autenticado.
+3.  Login y Registro
+    1.  Se ha Re-diseñado la pantalla de login.
+    2.  Mostrar errores de validación apenas inicie la página no es la mejor idea, entonces solo aparecerán luego de hacer click en el boton(submit).
+    3.  Para acercarlo a un sistema de produccion la funcion login del servicio "auth.service" es un observable que retornará el usuario logueado si no mostrará una alerta.
+4.  Ships,Pages One (Films),Page Two:
+    1.  Se agrego ngrx(store) para el almacenamiento de Ships.
+    2.  Como esta página esta vacia la llene con las peliculas obtenidas del api, con sus respectivos actores.
+5.  Para evitar la sobrecarga del backend y frontend tenemos las siguientes opciones:
+    1.  Usamos Lazy Load.
+    2.  Validar formularios en el front para evitar sobrecarga del backend. 
+    3.  Limitar consultas recurrentes por hora.
+    
